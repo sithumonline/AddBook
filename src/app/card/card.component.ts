@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+var faker = require('faker');
 
 @Component({
   selector: 'app-card',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
   name: string = 'Card';
   heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  bio: string = faker.lorem.sentence();
 
   constructor() {
     this.changeName('Mick');
