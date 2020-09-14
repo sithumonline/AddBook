@@ -23,9 +23,9 @@
         <td>{{ book.publisher }}</td>
         <td>{{ book.updated_date }}</td>
         <td>
-          <button type="button" class="btn btn-outline-danger">
+          <button type="button" class="btn btn-outline-danger" (click)="onDelete(book)">
             <fa-icon [icon]="faTrash"></fa-icon>
-          </button>
+          </button> 
         </td>
       </tr>
     </tbody>

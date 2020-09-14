@@ -27,4 +27,10 @@ export class FetchBooksService {
   addBook(book: Book): Observable<Book> {
     return this.http.post<Book>(this.booksUrl, book, httpOptions);
   }
+
+  //Remove Book
+  deleteBook(book: Book): Observable<{}> {
+    const url = `${this.booksUrl}/${book._id}`;
+    return this.http.delete(url, httpOptions);
+  }
 }
