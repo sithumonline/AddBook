@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { BooksTableComponent } from './components/books-table/books-table.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BooksTableComponent } from './components/books-table/books-table.compon
     CardComponent,
     HeroesListComponent,
     BooksTableComponent,
+    AddBookComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
