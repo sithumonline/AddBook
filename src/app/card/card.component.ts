@@ -15,7 +15,9 @@ export class CardComponent implements OnInit {
     this.changeName('Mick');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.log();
+  }
 
   changeName(name: string): void {
     this.name = name;
@@ -28,5 +30,9 @@ export class CardComponent implements OnInit {
 
   addHero(newHero: string) {
     this.heroes.push(newHero);
+  }
+
+  log() {
+    console.log(`Hee.. I'm ${faker.name.findName()}`);
   }
 }
