@@ -21,6 +21,5 @@ export class BooksTableComponent implements OnInit {
     this.fetchbooksService.getBooks().subscribe((bookz) => {
       this.books = bookz;
     });
-    console.log(this.books);
   }
 }

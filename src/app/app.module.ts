@@ -14,14 +14,10 @@ import { BooksTableComponent } from './components/books-table/books-table.compon
     CardComponent,
     CardComponent,
     HeroesListComponent,
-    BooksTableComponent
+    BooksTableComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,3 +1,26 @@
 <div>
-  <p *ngFor="let book of books">books-table works! {{ book.title }}</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Author</th>
+        <th scope="col">Description</th>
+        <th scope="col">Published Date</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Updated Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.description }}</td>
+        <td>{{ book.published_date }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.updated_date }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
