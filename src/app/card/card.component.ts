@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-var faker = require('faker');
+import * as faker from 'faker';
+//declare module "faker";
+//var faker = require('faker');
 
 @Component({
   selector: 'app-card',
