@@ -10,6 +10,7 @@
         <th scope="col">Published Date</th>
         <th scope="col">Publisher</th>
         <th scope="col">Updated Date</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,11 @@
         <td>{{ book.published_date }}</td>
         <td>{{ book.publisher }}</td>
         <td>{{ book.updated_date }}</td>
+        <td>
+          <button type="button" class="btn btn-outline-danger">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

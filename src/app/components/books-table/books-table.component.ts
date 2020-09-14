@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FetchBooksService } from '../../services/fetch-books/fetch-books.service';
 
 import { Book } from '../../models/Books';
@@ -9,6 +10,7 @@ import { Book } from '../../models/Books';
   styleUrls: ['./books-table.component.css'],
 })
 export class BooksTableComponent implements OnInit {
+  faTrash = faTrash;
   books: Book[];
 
   constructor(private fetchbooksService: FetchBooksService) {}
