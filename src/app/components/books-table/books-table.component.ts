@@ -14,12 +14,18 @@ export class BooksTableComponent implements OnInit {
   constructor(private fetchbooksService: FetchBooksService) {}
 
   ngOnInit(): void {
-    this.showbooks();
+    this.showBooks();
   }
 
-  showbooks() {
+  showBooks() {
     this.fetchbooksService.getBooks().subscribe((bookz) => {
       this.books = bookz;
+    });
+  }
+
+  addBook(book: Book) {
+    this.fetchbooksService.addBook(book).subscribe((book) => {
+      this.books.push(book);
     });
   }
 }

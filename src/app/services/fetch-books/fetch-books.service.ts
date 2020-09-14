@@ -22,4 +22,9 @@ export class FetchBooksService {
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl);
   }
+
+  //Add Book
+  addBook(book: Book): Observable<Book> {
+    return this.http.post<Book>(this.booksUrl, book, httpOptions);
+  }
 }
