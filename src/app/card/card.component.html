@@ -45,7 +45,8 @@
       </button>
     </div>
   </div>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let hero of heroes">{{ hero }}</li>
-  </ul>
+  <app-heroes-list
+    *ngFor="let hero of heroes"
+    [Heeroo]="hero"
+  ></app-heroes-list>
 </div>
