@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   name: string = 'Card';
+  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
 
   constructor() {
     this.changeName('Mick');
@@ -21,5 +22,9 @@ export class CardComponent implements OnInit {
   onKey(event: any) {
     //this.name = event.target.value;
     this.changeName(event.target.value);
+  }
+
+  addHero(newHero: string) {
+    this.heroes.push(newHero);
   }
 }

@@ -1,12 +1,51 @@
-<div>
-  <input (keyup)="onKey($event)" />
-  <br />
-  <h1>{{ name }} works!</h1>
-  <br />
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="../../assets/images/image-john.jpg" alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="index">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Change the name</span>
+    </div>
+    <input type="text" class="form-control" (keyup)="onKey($event)" />
+  </div>
+  <div class="container">
+    <div class="col">
+      <div>
+        <h1 class="text-center">{{ name }} works!</h1>
+      </div>
+      <!-- <br /> -->
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="../../assets/images/image-john.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
+  <br />
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Hero's name"
+      #newHero
+      (keyup.enter)="addHero(newHero.value)"
+      (blur)="addHero(newHero.value); newHero.value = ''"
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-secondary"
+        (click)="addHero(newHero.value)"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let hero of heroes">{{ hero }}</li>
+  </ul>
 </div>
