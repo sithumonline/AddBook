@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as faker from 'faker';
 //declare module "faker";
 //var faker = require('faker');
@@ -9,9 +9,11 @@ import * as faker from 'faker';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
+  @Input() Book: any;
   name: string = 'Card';
   heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
   bio: string = faker.lorem.sentence();
+  img: string = faker.image.city();
 
   constructor() {
     this.changeName('Mick');

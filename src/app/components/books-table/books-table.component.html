@@ -1,4 +1,9 @@
 <div class="index">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <app-card *ngFor="let book of books" [Book]="book"></app-card>
+    </div>
+  </div>
   <app-add-book (addBook)="addBook($event)"></app-add-book>
   <table class="table">
     <thead>
@@ -23,9 +28,13 @@
         <td>{{ book.publisher }}</td>
         <td>{{ book.updated_date }}</td>
         <td>
-          <button type="button" class="btn btn-outline-danger" (click)="onDelete(book)">
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            (click)="onDelete(book)"
+          >
             <fa-icon [icon]="faTrash"></fa-icon>
-          </button> 
+          </button>
         </td>
       </tr>
     </tbody>

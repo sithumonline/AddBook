@@ -1,51 +1,16 @@
 <div class="index">
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="">Change the name</span>
-    </div>
-    <input type="text" class="form-control" (keyup)="onKey($event)" />
-  </div>
-  <div class="container">
-    <div class="col">
-      <div>
-        <h1 class="text-center">{{ name }} works!</h1>
-      </div>
-      <!-- <br /> -->
-      <div class="card" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="../../assets/images/image-john.jpg"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <p class="card-text">
-            {{ bio }}
-          </p>
-        </div>
-      </div>
+  <div class="card" style="width: 18rem">
+    <img class="card-img-top" src="{{ img }}" alt="Card image cap" />
+    <div class="card-body">
+      <p class="card-text font-weight-bold">
+        {{ Book.title }}
+      </p>
+      <p class="card-text font-italic text-right">
+        {{ Book.author }}
+      </p>
+      <p class="card-text">
+        {{ Book.description }}
+      </p>
     </div>
   </div>
-  <br />
-  <div class="input-group">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Hero's name"
-      #newHero
-      (keyup.enter)="addHero(newHero.value)"
-      (blur)="addHero(newHero.value); newHero.value = ''"
-    />
-    <div class="input-group-append">
-      <button
-        class="btn btn-outline-secondary"
-        (click)="addHero(newHero.value)"
-      >
-        Add
-      </button>
-    </div>
-  </div>
-  <app-heroes-list
-    *ngFor="let hero of heroes"
-    [Heeroo]="hero"
-  ></app-heroes-list>
 </div>
