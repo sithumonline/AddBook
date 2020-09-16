@@ -12,3 +12,6 @@ Base on,
 - [Router-Outlet In Angular](https://www.c-sharpcorner.com/blogs/routeroutlet-in-angular)
 
 This is my first experience with `Angular 10`. I made this CRUD app as a simplified version of my BookHolder project using my old MERN01 backend.
+
+Email    :: meme@mail.com
+Password :: password
