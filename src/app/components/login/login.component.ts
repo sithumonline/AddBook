@@ -21,8 +21,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   handleLogin() {
-    //this.authService.login(this.username, this.password).subscribe();
-    alert(`${this.username} ${this.password}`)
     this.authService
       .login(this.username, this.password)
       .pipe(first())
@@ -33,8 +31,6 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(returnUrl);
         },
         error: (error) => {
-          //this.alertService.error(error);
-          //this.loading = false;
           console.log('HandleLogin : ', error);
         },
       });

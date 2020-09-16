@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as faker from 'faker';
-//declare module "faker";
-//var faker = require('faker');
 
 @Component({
   selector: 'app-card',
@@ -19,9 +17,7 @@ export class CardComponent implements OnInit {
     this.changeName('Mick');
   }
 
-  ngOnInit(): void {
-    this.log();
-  }
+  ngOnInit(): void {}
 
   changeName(name: string): void {
     this.name = name;
@@ -34,9 +30,5 @@ export class CardComponent implements OnInit {
 
   addHero(newHero: string) {
     this.heroes.push(newHero);
-  }
-
-  log() {
-    console.log(`Hee.. I'm ${faker.name.findName()}`);
   }
 }

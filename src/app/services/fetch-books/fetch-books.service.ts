@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Book } from '../../models/Books';
 
-//const Token = JSON.parse(localStorage.getItem('user'));
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -22,7 +21,6 @@ export class FetchBooksService {
 
   //Get Books
   getBooks(): Observable<Book[]> {
-    //console.log('Key : ', Token.token);
     return this.http.get<Book[]>(this.booksUrl);
   }
 
@@ -34,7 +32,6 @@ export class FetchBooksService {
   //Remove Book
   deleteBook(book: Book): Observable<{}> {
     const url = `${this.booksUrl}/${book._id}`;
-    console.log('Key : ', localStorage.getItem('user'));
     return this.http.delete(url, httpOptions);
   }
 }
