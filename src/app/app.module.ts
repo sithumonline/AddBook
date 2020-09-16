@@ -11,7 +11,7 @@ import { HeroesListComponent } from './components/heroes-list/heroes-list.compon
 import { BooksTableComponent } from './components/books-table/books-table.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { LoginComponent } from './components/login/login.component';
-import { HeaderService } from './services/header/header.service';
+//import { HeaderService } from './services/header/header.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { HeaderService } from './services/header/header.service';
     FontAwesomeModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderService, multi: true },
+    //{ provide: HTTP_INTERCEPTORS, useClass: HeaderService, multi: true },
   ],
   bootstrap: [AppComponent],
 })

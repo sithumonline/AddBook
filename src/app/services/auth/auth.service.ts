@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthService {
-  API_URL: string = 'https://mern-01.now.sh/';
+  API_URL: string = 'https://mern-01.now.sh/users/login';
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
   constructor(private http: HttpClient) {}
@@ -26,17 +26,22 @@ export class AuthService {
   //     httpOptions
   //   );
   // }
-  login(username: any, password: any) {
+  login(email: string, password: string) {
     return this.http
-      .post<User>(`${this.API_URL}/users/authenticate`, {
-        username,
+      .post<User>(this.API_URL, {
+        email,
         password,
       })
       .pipe(
         map((user) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('user', JSON.stringify(user));
-          this.userSubject.next(user);
+          //localStorage.setItem('user', JSON.stringify(user));
+          alert(user);
+          console.log('Key User : ', user.token);
+          //window.sessionStorage.setItem('user', JSON.stringify(user));
+          localStorage.clear();
+          localStorage.setItem('user', user.token);
+          //this.userSubject.next(user);
           return user;
         })
       );

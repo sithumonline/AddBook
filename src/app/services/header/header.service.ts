@@ -16,15 +16,23 @@ export class HeaderService implements HttpInterceptor {
   user = JSON.parse(localStorage.getItem('user'));
 
   constructor(private authService: AuthService) {}
-  // authHeader() {
-  //   if (this.user && this.user.token) {
-  //     // return { Authorization: 'Bearer ' + user.accessToken }; // for Spring Boot back-end
-  //     return { 'x-access-token': this.user.token }; // for Node.js Express back-end
-  //   } else {
-  //     console.log('Erro in authHeader');
-  //     return {};
-  //   }
-  // }
+  authHeader() {
+    // if (this.user && this.user.token) {
+    //   // return { Authorization: 'Bearer ' + user.accessToken }; // for Spring Boot back-end
+    //   return { 'x-access-token': this.user.token }; // for Node.js Express back-end
+    // } else {
+    //   console.log('Erro in authHeader');
+    //   return {};
+    // }
+    const user = this.authService.userValue;
+    const isLoggedIn = user && user.token;
+    if (isLoggedIn) {
+      return user.token;
+    } else {
+      console.log('Erro in authHeader');
+      return {};
+    }
+  }
 
   intercept(
     request: HttpRequest<any>,

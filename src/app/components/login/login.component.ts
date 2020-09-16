@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   handleLogin() {
     //this.authService.login(this.username, this.password).subscribe();
+    alert(`${this.username} ${this.password}`)
     this.authService
       .login(this.username, this.password)
       .pipe(first())
