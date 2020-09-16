@@ -10,6 +10,7 @@ import { CardComponent } from './components/card/card.component';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { BooksTableComponent } from './components/books-table/books-table.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AddBookComponent } from './components/add-book/add-book.component';
     HeroesListComponent,
     BooksTableComponent,
     AddBookComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
