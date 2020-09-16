@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +12,30 @@ export class LoginComponent implements OnInit {
   password: string;
   username: string;
 
-  constructor() {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {}
 
   handleLogin() {
-    console.log('Heee');
+    //this.authService.login(this.username, this.password).subscribe();
+    this.authService
+      .login(this.username, this.password)
+      .pipe(first())
+      .subscribe({
+        next: () => {
+          // get return url from query parameters or default to home page
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          this.router.navigateByUrl(returnUrl);
+        },
+        error: (error) => {
+          //this.alertService.error(error);
+          //this.loading = false;
+          console.log('HandleLogin : ', error);
+        },
+      });
   }
 }

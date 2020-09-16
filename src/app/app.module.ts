@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -11,6 +11,7 @@ import { HeroesListComponent } from './components/heroes-list/heroes-list.compon
 import { BooksTableComponent } from './components/books-table/books-table.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { LoginComponent } from './components/login/login.component';
+import { HeaderService } from './services/header/header.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
