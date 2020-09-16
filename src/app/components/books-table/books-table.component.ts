@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FetchBooksService } from '../../services/fetch-books/fetch-books.service';
 
@@ -10,7 +10,6 @@ import { Book } from '../../models/Books';
   styleUrls: ['./books-table.component.css'],
 })
 export class BooksTableComponent implements OnInit {
-  //@Output() deleteBook: EventEmitter<Book> = new EventEmitter();
   faTrash = faTrash;
   books: Book[];
 
@@ -33,7 +32,6 @@ export class BooksTableComponent implements OnInit {
   }
 
   onDelete(book: Book) {
-    //this.deleteBook.emit(book);
     this.deleteBook(book);
   }
 
