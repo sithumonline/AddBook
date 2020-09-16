@@ -308,6 +308,8 @@
   />
   <span>Kallathoni</span>
   <div class="spacer"></div>
+  <a routerLink="/login">Login</a>
+  <button type="button" class="btn btn-outline-dark" style="background-color: #fff;" routerLink="/login">Login</button>
   <a
     aria-label="Xeon on twitter"
     target="_blank"
@@ -394,12 +396,17 @@
       />
     </svg>
   </div>
+  <router-outlet></router-outlet>
   <!-- <app-card></app-card> -->
   <app-books-table></app-books-table>
   <!-- Footer -->
   <footer>
     Angular TestRun_&nbsp;
-    <a href="https://github.com/ebonynon/Ng_TestRun" target="_blank" rel="noopener">
+    <a
+      href="https://github.com/ebonynon/Ng_TestRun"
+      target="_blank"
+      rel="noopener"
+    >
       Give our repo a star.
       <div class="github-star-badge">
         <svg
@@ -417,7 +424,11 @@
         Star
       </div>
     </a>
-    <a href="https://github.com/ebonynon/Ng_TestRun" target="_blank" rel="noopener">
+    <a
+      href="https://github.com/ebonynon/Ng_TestRun"
+      target="_blank"
+      rel="noopener"
+    >
       <svg
         class="material-icons"
         xmlns="http://www.w3.org/2000/svg"
@@ -459,5 +470,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>
+<!-- 
+<router-outlet></router-outlet> -->

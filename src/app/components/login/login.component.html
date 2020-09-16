@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div className="container col-md-5">
+  <div className="card card-container">
+    <Form (ngSubmit)="handleLogin()">
+      <div className="form-group">
+        <label htmlFor="username" class="text-dark">
+          <h4>Username</h4>
+        </label>
+        <Input
+          type="text"
+          className="form-control"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Email"
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="password" class="text-dark">
+          <h4>Password</h4>
+        </label>
+        <Input
+          type="password"
+          className="form-control"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Password"
+        />
+      </div>
+
+      <div className="form-group">
+        <button
+          className="btn btn-primary btn-block"
+          type="submit"
+          value="Submit"
+          class="btn btn-dark btn-primary btn-lg btn-block"
+        >
+          <span>Login</span>
+        </button>
+      </div>
+    </Form>
+  </div>
+</div>
